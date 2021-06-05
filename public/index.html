@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Mini Vue</title>
+  </head>
+  <body>
+    <div id="app">
+      <img class="logo" mv-bind="src:image" alt="Logo Vue" />
+
+      <span class="title" mv-text="message"></span>
+
+      <div class="inputs">
+        <div class="input-box">
+          <span>Message</span>
+          <input type="text" mv-model="message" />
+        </div>
+
+        <div class="input-box">
+          <span>Message</span>
+          <input type="text" mv-model="message" />
+        </div>
+
+        <div class="input-box">
+          <span>Image</span>
+          <input type="text" mv-model="image" />
+        </div>
+      </div>
+    </div>
+
+    <script src="./MiniVue.js"></script>
+    <script>
+      const { createApp } = MiniVue
+
+      const app = createApp({
+        data() {
+          return {
+            message: 'Hello! Mini Vue',
+            image: 'vue.png'
+          }
+        }
+      })
+
+      app.mount()
+    </script>
+  </body>
+</html>
